@@ -1,0 +1,38 @@
+# Virtual Local Area Network is used to segement networks(divides the network in virtual area networks).
+
+example 1: see below
+this is an example of a network without VLAN's: lets call this Network-G
+
+#########################################################
+#       Device 1    Device 2      Device 3              #
+#       Device 4    Device 5      Device 6              #
+#       Device 7    Device 8      Device 9              #
+#       Device 10   Device 11     Device 12             #
+#########################################################
+
+Disadvantages:
+*  Broadcast traffic overload: every device will recieve a broadcast. this increases traffic and slow down the network
+*  Every device can communicate with each other if Device 1 is infecred will malware it can spread to the other devices
+*  Difficult to troubleshoot since every device is on one network
+*  No scalability when more devices are added to the network, it can/will degrade the performance
+*  Managing the network become more complex
+*  No traffic segementation you cant seperate employee traffic from quest traffic
+
+example 2: see below
+this is an example of a network with VLAN's: lets call this Network-Z
+
+########################################################
+#      Device 1   | Device a   |   Device 5            #
+#      Device 2   | Device b   |   Device 6            #
+#      Device 3   | Device c   |   Device 7            #
+#      Device 4   | Device d   |   Device 8            #
+########################################################
+
+Advantages:
+*  Better performance because were reducing the broadcast traffic by limitting the boadcast domain
+*  Good security: Devices can only communicate with devices in the same VLAN
+*  For devices to communcite with devices in other VLAN, I will have to configure routing, Switch Virtual Interface & use a L3 switch
+*  Logical grouping of devices: group devices based on roles & functions (finance, IT, HR etc)
+*  Makes troubleshooting easier
+*  Easy to manage permissions, policies, QoS for each VLAN
+*  Guest Isoation: create a VLAN for quest users
