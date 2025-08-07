@@ -1,0 +1,13 @@
+Hypertext Transfer Protocol (HTTP)
+
+For you to configure a switch or a router using the Web interface, you will have to type the IP address of the switch in a web 
+browser and it will take you there it does that using HTTP. HTTP is unsecured it trasmit data in the clear(unencrypted). so when you
+you type in your username and password it can be intercepted with a tool like wire shark
+
+
+That is why HTTPS was created Hypertext Transfer Protocol "SECURED".
+HTTPs encrypts data with Trasport Layer Security (TLS) or Secure Socket Layer(SSL), so that no one cant intercept and username and password
+
+Configure network devices such as switch with HTTPS if it allows it:
+
+how to configure HTTPS on TP-Link SG3210 switch(coming soon)
