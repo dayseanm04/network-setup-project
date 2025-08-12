@@ -35,7 +35,7 @@ Test the Theory to Determine the Cause
     In the Web UI for Net-A-router i checked the connected device tab the ISR 1100 wasn't connected (offline)
 
 Establish a Plan of Action
-  Connect to the switch by console & configure GigabitEthernet0/0/0 to receive IP address from DHCP server
+  Connect to the switch by console & configure GigabitEthernet0/0/0 to receive IP address from Network-A DHCP server
 
 Troubleshooting & Solution
   Solution Implemented:
