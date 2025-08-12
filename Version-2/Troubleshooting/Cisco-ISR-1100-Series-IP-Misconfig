@@ -1,0 +1,61 @@
+Problem Overview
+  Problem Title: Cisco ISR 1100 IP Misconfig
+  Date/Time of Problem: 08/10/2025		11:00PM
+  Device Name: Cisco ISR 1100 series
+  Device Type/OS: Router/Cisco
+  Steps to Reproduce: 
+    show ip interfaces brief
+    Enter into global config mode: 
+      enable
+      configure terminal
+    interface GigabitEthernet0/0/0
+    no ip address dhcp	(disables dhcp client functionality)
+    ip address <new IP (in this case: 192.168.0.#)> <new subnet mask>	(Assigns new static IP)
+    exit
+    copy running-config startup-config 	(save config)
+
+Problem Details
+  Symptoms: I can't access the web interface when I enter the new IP address (192.168.0.#) of the Cisco ISR 1100
+  Impact: Cisco ISR 1100
+
+Establish a Theory of Probable Cause
+  Initial Hypothesis: Misconfigured IP address
+  Reasoning:
+    After I changed the IP address of the router I reloaded the webpage (previous IP: 192.168.1.#, & new IP: 192.168.0.#) I couldn't access the webpage. “Site can't be reached” 
+    The IP that I configured for GigabitEthernet0/0/0 (192.168.0.#) was not on Network-A 192.168.1.0/24
+
+Test the Theory to Determine the Cause
+  Tests Performed:
+    I Ping the New IP(192.168.0.#) of the Cisco ISR 1100
+    Tracert 192.168.0.#
+    I logged into Net-A-Router to check if the ISR 1100 was connected
+  Test Results:
+    ping & tracert results: Host unreasonable
+    In the Web UI for Net-A-router i cheked the connected device tab the ISR 1100 wasn't connected (offline)
+
+Establish a Plan of Action
+  Connect to the switch by console & configure GigabitEthernet0/0/0 to receive IP address from DHCP server
+
+Troubleshooting & Solution
+  Solution Implemented:
+    Connect to Cisco ISR 1100 series via console using Putty
+    Enter in Global Config mode: enable > configure terminal (conf t for short)
+    show ip interfaces brief
+    interface GigabitEthernet0/0/0		(selects specified interface)
+    ip address dhcp		                (set interface to get IP from DHCP server)
+    exit
+    show ip interface brief            (display IP of the interface vefify the new ip)
+    copy running-config startup-config		(saves config)
+    Date & Time of Implementation: 08/10/2025 12:30PM
+
+Verification:
+Entered the Cisco ISR 1100 IP address obtained from the DHCP server (192.168.1.#) in a web browser and I was able to access the Web UI of the router
+
+Notes
+  Save configurations
+  If a static IP address was configured on an interface, you might need to remove it with no ip address <ip_address> <subnet_mask>
+
+Key
+Cisco ISR 1100 			192.168.1.#
+Network-A		    		192.168.1.0/24
+
