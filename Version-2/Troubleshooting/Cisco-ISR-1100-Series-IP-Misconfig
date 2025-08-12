@@ -12,6 +12,7 @@ Problem Overview
     no ip address dhcp	(disables dhcp client functionality)
     ip address <new IP (in this case: 192.168.0.#)> <new subnet mask>	(Assigns new static IP)
     exit
+    show ip interfaces brief            (check to see if the new IP was assigned)
     copy running-config startup-config 	(save config)
 
 Problem Details
@@ -31,7 +32,7 @@ Test the Theory to Determine the Cause
     I logged into Net-A-Router to check if the ISR 1100 was connected
   Test Results:
     ping & tracert results: Host unreasonable
-    In the Web UI for Net-A-router i cheked the connected device tab the ISR 1100 wasn't connected (offline)
+    In the Web UI for Net-A-router i checked the connected device tab the ISR 1100 wasn't connected (offline)
 
 Establish a Plan of Action
   Connect to the switch by console & configure GigabitEthernet0/0/0 to receive IP address from DHCP server
