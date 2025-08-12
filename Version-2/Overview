@@ -1,0 +1,20 @@
+1. Project Overview
+#  1.1. Introduction
+#    Project Name: Small business network setup 
+#    Dates: start: augest 10 2025
+#    Author: Daysean Mensah
+#    Purpose: Setup up an efficient network infrastructure for small business with 10-20 employees
+#    Scope: installing a new switch, router, configuration of IP addresses, network hardening
+#
+#   1.2. Goals & Objectives
+#     Primary Goals:
+#     Achieve a stable efficient internet connectivity
+#     Provide separate guest wifi
+#     Segment the network based on the departments
+#     Secure the network(network hardening)
+#
+#   2. Requirements Analysis
+#   2.1. User Requirements
+#     Network users: employees(Finance department, IT team, Customer service)
+#     Primary network usage: web browsing, VoIP calls
+#     Applications & services: microsoft 365 apps & google workspace
